@@ -9,12 +9,12 @@ import React from "react";
 
 type props = {
   placeholderImage: ImageSourcePropType;
-  selectedImage: string;
+  selectedImage?: string;
 };
 
 const ImageViewer = ({ selectedImage, placeholderImage }: props) => {
   const imageSource =
-    selectedImage !== null ? { uri: selectedImage } : placeholderImage;
+    selectedImage !== "" ? { uri: selectedImage } : placeholderImage;
 
   return <Image source={imageSource} style={styles.image} />;
 };
