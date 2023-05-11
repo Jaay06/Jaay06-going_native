@@ -6,7 +6,7 @@ import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 type iconButtonProps = {
   label: string;
   onPress: () => void;
-  //i shouldnt do this but...
+  //I shouldnt do this but...
   icon: any;
 };
 
