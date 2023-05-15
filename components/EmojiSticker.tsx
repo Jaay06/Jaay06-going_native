@@ -5,7 +5,7 @@ import {
   Text,
   View,
 } from "react-native";
-import React from "react";
+import React, { useRef } from "react";
 import Animated, {
   useAnimatedStyle,
   useSharedValue,
@@ -18,7 +18,7 @@ import {
   TapGestureHandlerEventPayload,
   PanGestureHandler,
 } from "react-native-gesture-handler";
-import * as MediaLibary from "expo-media-library";
+
 
 type emojiStickerProps = {
   imageSize: number;
@@ -30,11 +30,7 @@ const EmojiSticker = ({ imageSize, stickerSource }: emojiStickerProps) => {
   const AnimatedView = Animated.createAnimatedComponent(View);
   const scaleImage = useSharedValue(imageSize);
 
-  const [status, requestPermission] = MediaLibary.usePermissions();
-  if (status === null) {
-    requestPermission();
-  }
-
+ 
   const translateX = useSharedValue(0);
   const translateY = useSharedValue(0);
 

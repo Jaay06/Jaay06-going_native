@@ -7,7 +7,7 @@ type iconButtonProps = {
   label: string;
   onPress: () => void;
   //I shouldnt do this but...
-  icon: any;
+  icon: React.ComponentProps<typeof MaterialIcons>["name"];
 };
 
 const IconButton = ({ icon, label, onPress }: iconButtonProps) => {
